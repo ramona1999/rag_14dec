@@ -1,0 +1,7 @@
+langchain
+sentence-transformers
+streamlit
+unstructured
+faiss-cpu
+openai
+langchain-community
