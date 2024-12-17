@@ -8,3 +8,7 @@ source rag_web/bin/activate - MAC
 # git add filename, git add .
 # git status
 # streamlit run app.py - to run a streamlit application
+streamlit run your_script_name.py --server.port=8509
+
+docker build -t myrag:v1 .
+docker run -p 8080:8080 myrag:v1
