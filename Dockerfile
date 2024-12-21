@@ -1,3 +1,4 @@
+
 # Use a valid Python base image
 FROM python:3.9.12
 
@@ -15,3 +16,7 @@ EXPOSE 8080
 
 # Define the default command to run the Streamlit app
 CMD ["streamlit", "run", "app2.py", "--server.port=8080", "--server.address=0.0.0.0"]
+
+
+
+

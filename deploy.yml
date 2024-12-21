@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit-gke   # Name of the Deployment
+  labels:
+    app: streamlit      # Label indicating this is a Streamlit app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamlit     # Matches pods with the app label "streamlit"
+  template:
+    metadata:
+      labels:
+        app: streamlit   # Same label as above to link pods to service
+    spec:
+      containers:
+      - name: streamlit-cont    # Name of the container running the Streamlit app
+        image: us-central1-docker.pkg.dev/tribal-parsec-445317-p5/streamlit-cicd/streamlit_demo:v2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080    # Streamlit default port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: streamlit-demo-service  # Name of the Service
+spec:
+  selector:
+    app: streamlit        # This service will route traffic to pods with the "app: streamlit" label
+  ports:
+  - port: 8080             # The port the service exposes
+    targetPort: 8501      # Streamlit app runs on port 8501 inside the container
+  type: LoadBalancer     # Exposes the service with a load balancer (useful for cloud environments)
