@@ -9,10 +9,10 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: autopilot-cluster-1    # cluster name
   GKE_ZONE: us-central1 # cluster zone
-  IMAGE: streamlit_demo  # image name
-  IMAGE_TAG: v2 # image tag
+  IMAGE: streamlitgithub  # image name
+  IMAGE_TAG: v1 # image tag
   GAR_ZONE: us-central1 # artifact registry zone
-  GAR_REPO: streamlit-cicd # artifact registry repository
+  GAR_REPO: streamit-githubactions # artifact registry repository
 
 jobs:
   setup-build-publish-deploy:

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: streamlit-cont    # Name of the container running the Streamlit app
-        image: us-central1-docker.pkg.dev/tribal-parsec-445317-p5/streamlit-cicd/streamlit_demo:v2
+        image: us-central1-docker.pkg.dev/formal-wonder-445906-h2/streamit-githubactions/streamlitgithub:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080    # Streamlit default port
@@ -30,5 +30,5 @@ spec:
     app: streamlit        # This service will route traffic to pods with the "app: streamlit" label
   ports:
   - port: 8080             # The port the service exposes
-    targetPort: 8501      # Streamlit app runs on port 8501 inside the container
+     # Streamlit app runs on port 8501 inside the container
   type: LoadBalancer     # Exposes the service with a load balancer (useful for cloud environments)
