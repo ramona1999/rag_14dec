@@ -1,3 +1,4 @@
+
 # creating a virtual environment and activated it
 python -m venv "rag_web"
 source rag_web/bin/activate - MAC
@@ -139,6 +140,7 @@ EXPOSE 8080
 
 # Define the default command to run the Streamlit app
 CMD ["streamlit", "run", "app2.py", "--server.port=8080", "--server.address=0.0.0.0"]
+
 
 
 
